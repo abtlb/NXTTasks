@@ -1,0 +1,96 @@
+:root {
+    --my-color: rgb(0, 126, 126);
+}
+
+body {
+    margin-top: 2rem;
+    background-color: whitesmoke;
+}
+
+.top-part div {
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-top: 3rem;
+}
+
+.card {
+    width: 25vw;
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+}
+
+.material-symbols-outlined {
+    color: var(--my-color);
+}
+
+.image {
+    width: 100%;
+}
+
+.content {
+    width: 80%;
+    text-align: left;
+}
+
+.date-author {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 20%;
+    box-sizing: border-box;
+    * {
+        font-style: italic;
+    }
+}
+
+.date {
+    color: var(--my-color);
+}
+
+.image img {
+    width: 100%;
+}
+
+.browse-our {
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+.bussiness-tips {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+}
+
+.bottom-part {
+    width: 100vw;
+    margin-top: 5rem;
+}
+
+.cont {
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.bottom-part button {
+    margin: auto;
+    display: block;
+    background-color: var(--my-color);
+    color: white;
+    border-radius: 20px;
+    border-width: 0px;
+    padding: 10px;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    text-transform:uppercase;
+}
