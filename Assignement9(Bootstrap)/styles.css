@@ -1,0 +1,16 @@
+.image {
+    position: relative;
+}
+
+.image::after {
+    content: "CHEF SPECIAL";
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: orange;
+}
