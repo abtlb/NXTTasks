@@ -1,0 +1,319 @@
+* {
+      font-family: 'Kalam', 'Merienda', cursive, sans-serif;
+}
+
+body {
+    position: relative
+}
+
+.navbar {
+    position: absolute;
+    top: 5vh;
+    z-index: 1000;
+}
+
+.carousel-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.review h3 {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.caption h2 {
+    font-family: Brush Script MT;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: bold;
+}
+
+.landing {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chef-images {
+    position: relative;
+    /* height: 200%; */
+}
+
+.people {
+    background-color: gainsboro;
+}
+
+.chef-about p {
+    position: relative;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.chef-about h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: bold;
+}
+
+.chef-about p::before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    content: "\f10d";
+    font-weight: 900;
+    left: -45px;
+}
+
+.types {
+    color: white;
+}
+
+
+
+.drink {
+    background-image: url("img/juice.jpg");
+}
+
+.main {
+    background-image: url("img/Courses.jpg");
+}
+
+.starter {
+    background-image: url("img/starters.jpg");
+}
+
+.drink, .main, .starter {
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    transition: scale 0.3s ease-in-out;
+    scale: 1;
+    z-index: 0;
+}
+
+.drink:hover, .main:hover, .starter:hover {
+    scale: 1.05;
+    z-index: 5;
+}
+
+.drink::after, .main::after, .starter::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.drink:hover::after, .main:hover::after, .starter:hover::after {
+    opacity: 1;
+}
+
+.drink h2, .main h2, .starter h2, .drink p, .main p, .starter p {
+    z-index: 10;
+}
+
+.menu-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.menu-img:hover::after {
+    opacity: 1;
+}
+
+.menu-img:hover .diagonal-shape {
+    opacity: 1;
+    transform: scale(1, 1) skew(45deg) translate(100%, -100%);
+}
+
+.diagonal-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top right, rgba(254, 254, 254, 0), rgba(253, 253, 253, 0.498));
+    transform: scale(1, 1) skew(45deg) translate(-100%, 100%);
+    /* transform: scale(0.6, 1) skew(45deg); */
+    /* background-color: red; */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.chef-special {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 40%;
+    min-width: 100px;
+    height: 20%;
+    min-height: 50px;
+    background-color: orange;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    z-index: 100;
+}
+
+.offer {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 100%;
+    height: 35%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    color: white;
+    background-color: rgba(255, 166, 0, 0.461);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer2 {
+    background-color: rgba(0, 0, 0, 0.461);
+}
+
+header section {
+    height: 5vh
+}
+
+.social-icons {
+    font-size: 1.5rem;
+    color: black;
+}
+.social-icons a {
+    text-decoration: none;
+}
+
+nav {
+    text-transform: uppercase;
+}
+
+/* Custom scrollbar appearance */
+body::-webkit-scrollbar {
+  width: 12px;
+  background: #222;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: orange;
+  border-radius: 6px;
+}
+
+/* Always show scrollbar (WebKit) */
+body {
+  overflow-y: scroll;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: transparent;
+    border: none;
+}
+
+.order {
+    background-image: url("img/slide3.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    box-sizing: border-box;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:flex-start;
+    position: relative;
+}
+
+.order:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.order h2 {
+    width: 100%;
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.order p {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.order-content, .order-button {
+    z-index: 100;
+}
+
+.subscribe {
+    background-color: orange;
+}
+
+.email-input {
+    background-color: rgb(227, 147, 0);
+    color: white;
+    border-radius: 0;
+    border: none;
+}
+
+.about {
+    min-height: 50vh;
+    background-color: rgb(127, 70, 1);
+    color: white;
+}
+
+.insta-img {
+    width: 100%;
+    height: 120px; /* or any size you want */
+    overflow: hidden;
+}
+
+.insta-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background-color: rgb(127, 70, 1);
+}
