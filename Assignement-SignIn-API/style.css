@@ -1,0 +1,39 @@
+body {
+  color: white;
+  background: linear-gradient(to right, rgb(72, 16, 183), rgb(66, 5, 50));
+}
+
+.signup-form, .signin-form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: auto;
+}
+
+input {
+  width: clamp(300px, 50%, 600px);
+  height: 2rem;
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+.signup h2, .signin h2 {
+  text-align: center;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: rgb(72, 16, 183);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: rgb(55, 13, 138);
+}
