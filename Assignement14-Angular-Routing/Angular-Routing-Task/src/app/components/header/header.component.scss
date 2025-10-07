@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(25, 25, 51);
+    color: white;
+    padding: 40px 60px;
+    .header {
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    a {
+        text-decoration: none;
+        color: white;
+        margin: 0 15px;
+        &:hover {
+            color: rgb(100, 100, 200);
+            cursor: pointer;
+        }
+    }
+}

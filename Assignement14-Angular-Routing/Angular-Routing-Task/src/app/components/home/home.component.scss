@@ -1,0 +1,53 @@
+.image {
+    img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    background-color: rgb(32, 97, 75);
+    height: 70vh;
+    h3 {
+        color: white;
+        font-size: 5rem;
+        text-transform: uppercase;
+    }
+
+    .line {
+        display: flex;
+        align-items: center;
+        width: 400px;
+        color: white;
+
+        .star {
+            font-size: 3rem;
+            padding: 0 15px;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            flex: 1;
+            height: 3px;
+            background-color: white;
+        }
+    }
+
+    .text {
+        p {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+    }
+}

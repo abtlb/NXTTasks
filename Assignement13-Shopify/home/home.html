@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../slick/slick-theme.css" />
+
+</head>
+
+<body>
+    <header>
+        <!-- Welcome Bar -->
+        <section class="welcome row align-items-center">
+            <div class="col-1"></div>
+            <div class="col-7">
+                <p class="text-white my-0 mx-3">Welcome to Worldwide Electronics Store</p>
+            </div>
+            <div class="col-4 d-flex justify-content-center gap-2">
+                <!-- Language Dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button"
+                        id="languageBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="me-2">🇺🇸</span> English
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="languageBtn">
+                        <li><a class="dropdown-item d-flex align-items-center" href="#"><span class="me-2">🇺🇸</span>
+                                English</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center" href="#"><span class="me-2">🇸🇦</span>
+                                العربية</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center" href="#"><span class="me-2">🇫🇷</span>
+                                Français</a></li>
+                    </ul>
+                </div>
+                <div class="align-self-center" style="color: white;">|</div>
+                <!-- Country Dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button"
+                        id="countryBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="me-2">🇮🇹</span> Italy (PKR ₨)
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="countryBtn">
+                        <li><a class="dropdown-item d-flex align-items-center" href="#"><span class="me-2">🇦🇺</span>
+                                Australia</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center" href="#"><span class="me-2">🇧🇪</span>
+                                Belgium</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center" href="#"><span class="me-2">🇩🇪</span>
+                                Germany</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Brand & Search Bar -->
+        <section class="row brand">
+            <div class="col-1"></div>
+            <div class="col-10 d-flex justify-content-between align-items-center py-3">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="../Images/logo_210x210@2x.png" alt="Shopify Logo" width="200">
+                </div>
+                <!-- Search Bar -->
+                <div class="search-bar d-flex">
+                    <select class="form-select ms-2" aria-label="Select category">
+                        <option selected>All Categories</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="phones">Phones</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="cameras">Cameras</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="Search products...">
+                    <button class="btn btn-primary" style="background-color: green;">Search</button>
+                </div>
+                <!-- Account, Wishlist, Cart -->
+                <div class="d-flex align-items-center gap-4">
+                    <!-- Account -->
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fa-regular fa-user fa-lg"></i>
+                        <div>
+                            <div style="font-size: 0.9rem; color: #aaa;">Login</div>
+                            <div style="font-weight: 500;">Account</div>
+                        </div>
+                    </div>
+                    <!-- Wishlist -->
+                    <div class="position-relative">
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="font-size:0.8rem;">0</span>
+                    </div>
+                    <!-- Cart -->
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="position-relative">
+                            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                style="font-size:0.8rem;">0</span>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.9rem; color: #aaa;">Your Cart</div>
+                            <div style="font-weight: 500;">Rs.0.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </section>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid px-5">
+            <!-- Browse All Categories (Left) -->
+            <div class="d-flex align-items-center position-relative">
+                <i class="fas fa-bars me-2"></i>
+                <button id="catButt" style="color: green; background-color: transparent; border: none;">Browse
+                    All Categories</button>
+
+                <!-- Categories Dropdown -->
+                <div id="categoriesDropdown" class="categories-dropdown">
+                    <ul class="categories-list">
+                        <li><a href="#"><i class="fas fa-laptop me-2"></i>Laptops & Computers</a></li>
+                        <li><a href="#"><i class="fas fa-mobile-alt me-2"></i>Mobile Phones</a></li>
+                        <li><a href="#"><i class="fas fa-headphones me-2"></i>Audio & Headphones</a></li>
+                        <li><a href="#"><i class="fas fa-camera me-2"></i>Cameras & Photography</a></li>
+                        <li><a href="#"><i class="fas fa-tv me-2"></i>TV & Home Entertainment</a></li>
+                        <li><a href="#"><i class="fas fa-gamepad me-2"></i>Gaming Accessories</a></li>
+                        <li><a href="#"><i class="fas fa-watch me-2"></i>Wearable Technology</a></li>
+                        <li><a href="#"><i class="fas fa-plug me-2"></i>Cables & Adapters</a></li>
+                        <li><a href="#"><i class="fas fa-battery-half me-2"></i>Power Banks & Chargers</a></li>
+                        <li><a href="#"><i class="fas fa-cog me-2"></i>Electronics Accessories</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Navigation Items (Center) -->
+            <div class="d-flex justify-content-center flex-grow-1">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" style="color: green;" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="productDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Product
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="productDropdown">
+                            <li><a class="dropdown-item" href="#">Laptops</a></li>
+                            <li><a class="dropdown-item" href="#">Phones</a></li>
+                            <li><a class="dropdown-item" href="#">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="blogDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Blog
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="blogDropdown">
+                            <li><a class="dropdown-item" href="#">Tech News</a></li>
+                            <li><a class="dropdown-item" href="#">Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="pagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="shopDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="shopDropdown">
+                            <li><a class="dropdown-item" href="#">Electronics</a></li>
+                            <li><a class="dropdown-item" href="#">Computers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Sale Banner (Right) -->
+            <div class="d-flex align-items-center text-danger">
+                <i class="fas fa-percentage me-2"></i>
+                <span style="color: black;">Sale $20 Off Your First Order</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+            Launch demo modal
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        This is a test modal content.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="main-stuff">
+            <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+
+                    <div class="col-6" style="height: 40vh;">
+                        <div class="monitor">
+                            <div class="banner-text">
+                                <span class="badge">NEW ARRIVALS</span>
+                                <h3>4K LCD<br>Quantum Vision LCD</h3>
+                                <p class="subtitle">Limited Time: Online Only!</p>
+                                <button class="shop-btn">Shop Now</button>
+                            </div>
+                            <img src="../Images/hero-Banner-1.2.png" alt="4K LCD Monitor">
+                        </div>
+                    </div>
+
+                    <div class="col-4 d-flex flex-column" style="height: 40vh;">
+                        <div class="mobile">
+                            <div class="banner-text">
+                                <h3>Mobile<br>Nexus Mobile Pro 256GB</h3>
+                                <p class="subtitle">Limited Time: Online Only!</p>
+                            </div>
+                            <img src="../Images/hero-Banner-2.png" alt="Mobile Phone" width="100%">
+                        </div>
+
+                        <div class="mobile">
+                            <div class="banner-text">
+                                <h3>iPadMini<br>10 Inch iPad Mini Pro</h3>
+                                <p class="subtitle">Limited Time: Online Only!</p>
+                            </div>
+                            <img src="../Images/hero-Banner-1.3.png" alt="iPad Mini" width="100%">
+                        </div>
+                    </div>
+
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories Section -->
+        <section class="categories-section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-1">
+                        <button class="category-nav-btn prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                    </div>
+                    <div class="col-10">
+                        <div class="categories-grid">
+                            <div class="category-item">
+                                <div class="category-circle">
+                                    <img src="../Images/1A8F7DFB-7C65-4DEF-B259-2284C7C638BAcat01.png" alt="Laptop">
+                                </div>
+                                <h6>Laptop</h6>
+                                <span class="item-count">+ Items</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-circle">
+                                    <img src="../Images/1A8F7DFB-7C65-4DEF-B259-2284C7C638BAcat01.png" alt="Earbuds">
+                                </div>
+                                <h6>Earbuds</h6>
+                                <span class="item-count">+ Items</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-circle">
+                                    <img src="../Images/1A8F7DFB-7C65-4DEF-B259-2284C7C638BAcat01.png" alt="Keyboard">
+                                </div>
+                                <h6>Keyboard</h6>
+                                <span class="item-count">10 + Items</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-circle">
+                                    <img src="../Images/1A8F7DFB-7C65-4DEF-B259-2284C7C638BAcat01.png" alt="TV & LCD">
+                                </div>
+                                <h6>Tv & LCD</h6>
+                                <span class="item-count">10 + Items</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-circle">
+                                    <img src="../Images/1A8F7DFB-7C65-4DEF-B259-2284C7C638BAcat01.png" alt="RGB Mouse">
+                                </div>
+                                <h6>RGB Mouse</h6>
+                                <span class="item-count">10 + Items</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-circle">
+                                    <img src="../Images/1A8F7DFB-7C65-4DEF-B259-2284C7C638BAcat01.png"
+                                        alt="Mobile Phones">
+                                </div>
+                                <h6>Mobile Phones</h6>
+                                <span class="item-count">10 + Items</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-circle">
+                                    <img src="../Images/1A8F7DFB-7C65-4DEF-B259-2284C7C638BAcat01.png" alt="Handsfree">
+                                </div>
+                                <h6>Handsfree</h6>
+                                <span class="item-count">10 + Items</span>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-circle">
+                                    <img src="../Images/1A8F7DFB-7C65-4DEF-B259-2284C7C638BAcat01.png" alt="Joysticks">
+                                </div>
+                                <h6>Joysticks</h6>
+                                <span class="item-count">10 + Items</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <button class="category-nav-btn next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured">
+            <div class="joystick-cont">
+                <h5>
+                    Special Offer
+                </h5>
+                <img src="../Images/gamejoystick.png" alt="">
+                <p>
+                    Aero Control <br> Pro Joysticks <br> $120.00
+                </p>
+            </div>
+            <div class="featured-products-cont">
+                <header>
+                    <h3>Featured Products</h3>
+                    <div class="products-filters">
+                        <button>
+                            <span style="color: green;">&#x2022;</span>
+                            <p>All products</p>
+                        </button>
+                        <button>
+                            <span>&#x2022;</span>
+                            <p>Laptop</p>
+                        </button>
+                        <button>
+                            <span>&#x2022;</span>
+                            <p>Mobile</p>
+                        </button>
+                        <button>
+                            <span>&#x2022;</span>
+                            <p>Keyboard</p>
+                        </button>
+                        <button>
+                            <span>&#x2022;</span>
+                            <p>Mouse</p>
+                        </button>
+                    </div>
+                </header>
+                <div class="featured-products">
+                    <article class="product-card">
+                        <img src="../Images/pro01.png" alt="Product 1">
+                        <h5>Wireless Headphones</h5>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, voluptatem
+                            repellendus sint labore aspernatur mollitia quia provident aperiam quae fugit.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$99 .99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </article>
+                    <article class="product-card">
+                        <img src="../Images/pro01.png" alt="Product 1">
+                        <h5>Wireless Headphones</h5>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, voluptatem
+                            repellendus sint labore aspernatur mollitia quia provident aperiam quae fugit.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$99 .99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </article>
+                    <article class="product-card">
+                        <img src="../Images/pro01.png" alt="Product 1">
+                        <h5>Wireless Headphones</h5>
+                        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, voluptatem
+                            repellendus sint labore aspernatur mollitia quia provident aperiam quae fugit.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$99 .99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular">
+            <div class="popular-products-cont">
+                <header>
+                    <h3>Popular Products</h3>
+                    <div class="products-filters">
+                        <button>
+                            <span style="color: green;">&#x2022;</span>
+                            <p>All products</p>
+                        </button>
+                        <button>
+                            <span>&#x2022;</span>
+                            <p>Laptop</p>
+                        </button>
+                        <button>
+                            <span>&#x2022;</span>
+                            <p>Mobile</p>
+                        </button>
+                        <button>
+                            <span>&#x2022;</span>
+                            <p>Keyboard</p>
+                        </button>
+                        <button>
+                            <span>&#x2022;</span>
+                            <p>Mouse</p>
+                        </button>
+                    </div>
+                </header>
+                <div class="carousel-container">
+                    <!-- <button class="carousel-nav-btn prev-btn" id="popularPrevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button> -->
+                    <div class="carousel-wrapper">
+                        <div class="featured-products" id="popularProductsCarousel">
+                            <article class="product-card">
+                                <img src="../Images/pro01.png" alt="Product 1">
+                                <h5>Wireless Headphones</h5>
+                                <p class="desc">Premium wireless headphones with noise cancellation.</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="price">$99.99</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </article>
+                            <article class="product-card">
+                                <img src="../Images/pro01.png" alt="Product 2">
+                                <h5>Gaming Keyboard</h5>
+                                <p class="desc">Mechanical RGB gaming keyboard with premium switches.</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="price">$129.99</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </article>
+                            <article class="product-card">
+                                <img src="../Images/pro01.png" alt="Product 3">
+                                <h5>Smart Watch</h5>
+                                <p class="desc">Advanced fitness tracking with heart rate monitor.</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="price">$199.99</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </article>
+                            <article class="product-card">
+                                <img src="../Images/pro01.png" alt="Product 4">
+                                <h5>Wireless Mouse</h5>
+                                <p class="desc">Ergonomic wireless mouse with precision tracking.</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="price">$59.99</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </article>
+                            <article class="product-card">
+                                <img src="../Images/pro01.png" alt="Product 5">
+                                <h5>Laptop Stand</h5>
+                                <p class="desc">Adjustable laptop stand for better ergonomics.</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="price">$39.99</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </article>
+                        </div>
+                    </div>
+                    <!-- <button class="carousel-nav-btn next-btn" id="popularNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="ad">
+            <div>
+                <p>Big Saving Await</p>
+                <p><span style="color: wheat;">Shop Now</span> for Unbeatable Deals!</p>
+            </div>
+            <div>
+                <img src="../Images/sale-banner-1.png" alt="">
+            </div>
+            <div>
+                <img src="../Images/sale-banner-2.png" alt="">
+            </div>
+        </section>
+
+        <section class="popular">
+            <div class="popular-products-cont">
+                <header>
+                    <h3>Recommended Products</h3>
+                    <button style="background-color: transparent; border: none;">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </header>
+                <div class="featured-products autoplay" id="popularProductsCarousel">
+                    <article class="product-card">
+                        <img src="../Images/pro01.png" alt="Product 1">
+                        <h5>Wireless Headphones</h5>
+                        <p class="desc">Premium wireless headphones with noise cancellation.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$99.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </article>
+                    <article class="product-card">
+                        <img src="../Images/pro01.png" alt="Product 2">
+                        <h5>Gaming Keyboard</h5>
+                        <p class="desc">Mechanical RGB gaming keyboard with premium switches.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">$129.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </article>
+                    <article class="product-card">
+                        <img src="../Images/pro01.png" alt="Product 3">
+                        <h5>Smart Watch</h5>
+                        <p class="desc">Advanced fitness tracking with heart rate monitor.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">$199.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </article>
+                    <article class="product-card">
+                        <img src="../Images/pro01.png" alt="Product 4">
+                        <h5>Wireless Mouse</h5>
+                        <p class="desc">Ergonomic wireless mouse with precision tracking.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">$59.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </article>
+                    <article class="product-card">
+                        <img src="../Images/pro01.png" alt="Product 5">
+                        <h5>Laptop Stand</h5>
+                        <p class="desc">Adjustable laptop stand for better ergonomics.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">$39.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="brands-cont">
+            <div class="brands">
+                <div class="brand">
+                    <img src="../Images/Brand01.png" alt="">
+                </div>
+                <div class="brand">
+                    <img src="../Images/Brand02.png" alt="">
+                </div>
+                <div class="brand">
+                    <img src="../Images/Brand03.png" alt="">
+                </div>
+                <div class="brand">
+                    <img src="../Images/Brand04.png" alt="">
+                </div>
+                <div class="brand">
+                    <img src="../Images/Brand05.png" alt="">
+                </div>
+                <div class="brand">
+                    <img src="../Images/Brand01.png" alt="">
+                </div>
+                <div class="brand">
+                    <img src="../Images/Brand03.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="blogs">
+            <header>
+                <h5>
+                    Latest blogs
+                </h5>
+                <div>
+                    <p>
+                        See all posts
+                    </p>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </header>
+            <div class="blogs-container">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="../Images/blog01.png" alt="Blog 1">
+                    </div>
+                    <div class="blog-content">
+                        <span><i class="fa-regular fa-calendar"></i> Feb 10, 2024</span>
+                        <h6>How to Choose the Right Laptop</h6>
+                        <p>Choosing the perfect laptop can be daunting. Our comprehensive guide breaks down key factors
+                            like performance, portability, and budget to help you make an informed decision.</p>
+                        <a href="#">Read more... <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="../Images/blog02.png" alt="Blog 2">
+                    </div>
+                    <div class="blog-content">
+                        <span><i class="fa-regular fa-calendar"></i> Feb 10, 2024</span>
+                        <h6>How to Choose the Right Laptop</h6>
+                        <p>Choosing the perfect laptop can be daunting. Our comprehensive guide breaks down key factors
+                            like performance, portability, and budget to help you make an informed decision.</p>
+                        <a href="#">Read more... <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="../Images/blog03.png" alt="Blog 3">
+                    </div>
+                    <div class="blog-content">
+                        <span><i class="fa-regular fa-calendar"></i> Feb 10, 2024</span>
+                        <h6>How to Choose the Right Laptop</h6>
+                        <p>Choosing the perfect laptop can be daunting. Our comprehensive guide breaks down key factors
+                            like performance, portability, and budget to help you make an informed decision.</p>
+                        <a href="#">Read more... <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="../Images/blog02.png" alt="Blog 2">
+                    </div>
+                    <div class="blog-content">
+                        <span><i class="fa-regular fa-calendar"></i> Feb 10, 2024</span>
+                        <h6>How to Choose the Right Laptop</h6>
+                        <p>Choosing the perfect laptop can be daunting. Our comprehensive guide breaks down key factors
+                            like performance, portability, and budget to help you make an informed decision.</p>
+                        <a href="#">Read more... <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../slick/slick.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+footer {
+    margin: 0;
+}
+
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgb(35, 35, 71);
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    height: 20vh;
+    font-size: 1.7rem;
+}
+
+.location, .around, .about-text {
+    height: 100%;
+    text-wrap: wrap;
+    width: 33vw;
+}
+
+.around div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    i {
+        border-width: 2px;
+        border-radius: 50%;
+        border-style: solid;
+        padding: 10px;
+    }
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(25, 25, 51);
+    color: white;
+    font-size: 1.2rem;
+}
